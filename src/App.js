@@ -1,41 +1,32 @@
-import { useState } from 'react'
-import Form from './Form.js';
-import Date from './Date.js';
-import getRandomQuote from './quote.js';
-import './App.css';
+import React, { useState } from 'react';
+import TodoList from './TodoList';
 
-const App = () => {
-  const [quote, setQuote] = useState('');
-  setDates([...Date, { day: parseInt(dayInput), month: parseInt(monthInput), year: parseInt(yearInput) }])
- const [activityInput, setActivityInput] = useState("")
+function App() {
+  const [tasks, setTasks] = useState([]);
 
- const handleGenerateQuote = () => {
-  const randomQuote = getRandomQuote();
-  setQuote(randomQuote);
+  const addTask = (task) => {
+    setTasks([...tasks, { id: tasks.length + 1, text: task, completed: false }]);
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    
-    setActivityInput("")
-    
-  }
-}
+  const toggleTaskCompletion = (taskId) => {
+    setTasks(tasks.map(task => (task.id === taskId ? { ...task, completed: !task.completed } : task)));
+  };
+
+  const deleteTask = (taskId) => {
+    setTasks(tasks.filter(task => task.id !== taskId));
+  };
 
   return (
     <div>
-      <h1>To Do App</h1>
-      <button onClick={handleGenerateQuote}>Generate Positive Quote</button>
-      {quote && <p>{quote}</p>}
-      <Form 
-        activityInput={activityInput} 
-        setActivityInput={setActivityInput}
-        handleSubmit={handleSubmit}
+      <h1>Gina's Todo List</h1>
+      <TodoList tasks={tasks} onToggleCompletion={toggleTaskCompletion} onDeleteTask={deleteTask} />
+      <input
+        type="text"
+        placeholder="Add a new task"
+        onKeyDown={(e) => e.key === 'Enter' && addTask(e.target.value)}
       />
-       {Date.map((Date) => {
-        return <Date day={Date.day} month={Date.month} year={Date.year} activityInput={Date.activityInput}/>
-      })}
     </div>
-  )
+  );
 }
 
 export default App;
