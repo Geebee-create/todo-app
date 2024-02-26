@@ -17,7 +17,12 @@ const positiveQuotes = [
     "Take the time to enjoy the little things, for one day you may look back and realize they were the big things. - Robert Brault",
     "You may not control all the events that happen to you, but you can decide not to be reduced by them. - Maya Angelou",
     "It always seems impossible until it's done. - Nelson Mandela",
-    "A person who never made a mistake never tried anything new. - Albert Einstein"
+    "A person who never made a mistake never tried anything new. - Albert Einstein",
+    "If you want the rainbow, you have to put up with the rain. - Dolly Parton",
+    "“Don't compare your beginning to someone else's middle. - Jon Acuff",
+    "Failure is an important part of your growth and developing resilience. Don't be afraid to fail. - Michelle Obama",
+    "Look at the sky; remind yourself of the cosmos. Seek vastness at every opportunity in order to see the smallness of yourself. - Matt Haig"
+
 ];
   
   function getRandomQuote() {

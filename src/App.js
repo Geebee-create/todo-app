@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+// useEffect is also part of the react library so I need to import it for it to work.
 import TodoList from './TodoList';
+import getRandomQuote from './quote'; // Import getRandomQuote function
+// import Sashimage from './Sashimage';
+
 
 // meaning of parameter in programming.
 // In programming, a parameter (or formal parameter) is a variable that is used in a function or method definition
@@ -11,6 +15,18 @@ function App() {
   // below creates an array that will hold the list of tasks for the todo list. 
   // The variable is tasks. The useState hook is used. 
   const [tasks, setTasks] = useState([]);
+  const [randomQuote, setRandomQuote] = useState('');
+
+
+
+
+  // The useEffect hook is a part of React and is used for handling side effects in functional components. Side effects can include data fetching, subscriptions, manually changing the DOM, etc.
+  // Inside the useEffect, there is a callback function. This function contains the code that will be executed when the component mounts 
+  // (and in some other scenarios, depending on the dependencies array).
+  useEffect(() => {
+    setRandomQuote(getRandomQuote());
+  }, []);
+
 
   // defines the function addTask which allows for tasks to be added to the list. 
   // The new task object included an ID. Completed is initially set to false.
@@ -43,6 +59,9 @@ function App() {
     <div>
       <h1>Gina's Todo List</h1>
       <TodoList tasks={tasks} onToggleCompletion={toggleTaskCompletion} onDeleteTask={deleteTask} />
+      <div>
+        <p>Positive Quote: {randomQuote}</p>
+      </div>
       <input
         type="text"
         placeholder="Add a new task"
@@ -52,4 +71,9 @@ function App() {
   );
 }
 
+
+
 export default App;
+
+// i want to finish adding in an image as I did it wrong before... 
+/* <Sashimage imageSrc={require('./src/mapup.JPG')} altText="pup" /> */

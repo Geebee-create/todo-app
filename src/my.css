@@ -25,3 +25,11 @@ body {
   button:hover {
     background-color: #66be6a;
   }
+
+  .Sashimage img {
+    text-align: center;
+      max-width: 50%;
+      height: auto;
+      border-radius: 12px;
+      border: 2px rgb(35, 18, 58);
+  }
