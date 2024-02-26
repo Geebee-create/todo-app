@@ -5,7 +5,7 @@ import getRandomQuote from './quote'; // Import getRandomQuote function
 // import Sashimage from './Sashimage';
 
 
-// meaning of parameter in programming.
+// meaning of parameter in programming...
 // In programming, a parameter (or formal parameter) is a variable that is used in a function or method definition
 //  to represent the input data that the function will operate on. When you call a function, you provide values for
 //  its parameters, and these values are referred to as arguments.
