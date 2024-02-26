@@ -1,3 +1,6 @@
+// look more into how I can integrate this file into App.js
+
+
 
 const positiveQuotes = [
     "Be yourself; everyone else is already taken. - Oscar Wilde",

@@ -1,3 +1,27 @@
 body {
     background-color: #f19665; 
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  h1 {
+    color: #333;
+    text-align: center;
+  }
+
+  button {
+    margin-left: 10px;
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #6a4caf;
+    color: #fff;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #66be6a;
+  }
